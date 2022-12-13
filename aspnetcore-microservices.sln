@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Catalog\Services\Catalog.API\Catalog.API.csproj", "{6EA68492-2CB9-4EBC-959E-86DB66AE8940}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{6EA68492-2CB9-4EBC-959E-86DB66AE8940}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
