@@ -31,8 +31,8 @@ public class DiscountRepository : IDiscountRepository
         using var connection =
             new NpgsqlConnection(_configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
         var affected = await connection.ExecuteAsync(
-            "INSERT INTO Coupon (ProductName, Description,Amount) VALUES (@ProductName, @escription, @Amount," +
-            "new(ProductName = coupon.ProductName, DEscription - coupon.Descriptioo, Amount = coupon.Amount))");
+            "INSERT INTO Coupon (ProductName, Description,Amount) VALUES (@ProductName, @Description, @Amount," +
+            "new(ProductName = coupon.ProductName, Description - coupon.Description, Amount = coupon.Amount))");
 
         if (affected == 0)
             return false;
@@ -45,7 +45,7 @@ public class DiscountRepository : IDiscountRepository
         using var connection =
             new NpgsqlConnection(_configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
         var affected = await connection.ExecuteAsync(
-            "UPDATE Coupon SET ProductName=@ProductName, DEscription-@Description, Amount=@Amount WHERE Id=@Id",
+            "UPDATE Coupon SET ProductName=@ProductName, Description=@Description, Amount=@Amount WHERE Id=@Id",
             new
             {
                 ProductName = coupon.ProductName, Description = coupon.Description, Amount = coupon.Amount,
@@ -62,7 +62,7 @@ public class DiscountRepository : IDiscountRepository
     {
         using var connection =
             new NpgsqlConnection(_configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
-        var affected = await connection.ExecuteAsync("DELETE FROM Coupon WHERE ProductNAme=@ProductName",
+        var affected = await connection.ExecuteAsync("DELETE FROM Coupon WHERE ProductName=@ProductName",
             new { ProductName = productName });
 
         if (affected == 0)
