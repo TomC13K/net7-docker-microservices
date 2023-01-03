@@ -36,7 +36,15 @@ docker images
 docker rmi <full-id>
 ```
 
+# Ports for our created services
+- 5000+ localhost
+- 8000+ dockerized versions
+
 
 # Services
+- localhost:9001/                     - **portainer**
+- localhost:5050/browser/             - **pgAdmin4**
+---
 - localhost:8000/swagger/index.html   - **catalog.API**
 - localhost:8001/swagger/index.html   - **basket.API**
+- localhost:8002/swagger/index.html   - **discount.API**
